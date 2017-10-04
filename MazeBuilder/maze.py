@@ -47,7 +47,7 @@ class Cell(object):
     
 
 # test samples
-#c1 = Cell(0,0)
-#c2 = Cell(0,1)
-#c2.set_neighbor('n',c1)
-#c1.set_neighbor('s',c2)
+c1 = Cell(0,0)
+c2 = Cell(0,1)
+c2.set_neighbor('n',c1)
+c1.set_neighbor('s',c2)
