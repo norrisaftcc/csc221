@@ -7,7 +7,10 @@ Created on Tue Oct  3 19:42:11 2017
 
 base classes for the MazeBuilder application
 """
-
+NORTH = 'n'
+SOUTH = 's'
+EAST  = 'e'
+WEST  = 'w'
 
 class Cell(object):
     """ A cell has:
