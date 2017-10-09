@@ -40,7 +40,7 @@ def bubbleSort2(lyst, profiler):
             if lyst[i] < lyst[i - 1]:  # Exchange if needed
                 swap(lyst, i, i - 1, profiler)
                 swapped = True
-                if trace: print(lyst)
+                #if trace: print(lyst)
             i += 1
             profiler.comparison()
         if not swapped: return
