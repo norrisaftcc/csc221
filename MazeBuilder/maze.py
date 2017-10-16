@@ -12,6 +12,29 @@ SOUTH = 's'
 EAST  = 'e'
 WEST  = 'w'
 
+class Maze(object):
+    """ a maze has:
+        contents that are implementation specific
+        a current cell (that the player is in)
+        a getter and setter for that current cell)
+    """
+    def __init__(self):
+        self.contents = None
+        self.currentCell = None
+
+    def getCurrentCell(self):
+        return self.currentCell
+
+    def setCurrentCell(self, cell):
+        self.currentCell = cell
+
+class OneRoomMaze(Maze):
+    """ a one room maze contains only one cell """
+    def __init__(self):
+        self.currentCell = Cell()
+        self.contents = self.currentCell
+    
+
 class Cell(object):
     """ A cell has:
         a row and column location
