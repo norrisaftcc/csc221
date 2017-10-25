@@ -34,11 +34,16 @@ class OneRoomMaze(Maze):
         self.currentCell = Cell(0,0)
         self.contents = self.currentCell
 
-    #def getCurrentCell(self):
-    #    pass
+#    def getCurrentCell(self):
+#        pass
 
-    #def setCurrentCell(self):
-    #    pass
+#    def setCurrentCell(self):
+#        pass
+
+class AnotherOneRoomMaze(OneRoomMaze):
+    def __init__(self):
+        pass
+    
     
 class ListMaze(Maze):
     """ a one-dimensional maze using a python list to store cells """
@@ -52,8 +57,8 @@ class ListMaze(Maze):
         self.currentCell = contents[0]
         self.currentCellNum = 0
     
-    def getCurrentCell(self):
-        pass
+ #   def getCurrentCell(self):
+ #       pass
     
     def getCurrentCellNum(self):
         return self.currentCellNum
