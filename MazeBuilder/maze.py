@@ -33,6 +33,43 @@ class OneRoomMaze(Maze):
     def __init__(self):
         self.currentCell = Cell()
         self.contents = self.currentCell
+
+    #def getCurrentCell(self):
+    #    pass
+
+    def setCurrentCell(self):
+        pass
+    
+class ListMaze(Maze):
+    """ a one-dimensional maze using a python list to store cells """
+    def __init__(self, numCells = 4):
+        # initialize list of cells
+        contents = []
+        for i in range(numCells):
+            # set x coordinate (y coord is always zero)
+            contents.append(Cell(i, 0))
+        # start at the beginning
+        self.currentCell = contents[0]
+        self.currentCellNum = 0
+    
+    def getCurrentCell(self):
+        pass
+    
+    def getCurrentCellNum(self):
+        return self.currentCellNum
+    
+    def setCurrentCell(self, cell):
+        # note: if you pass it a cell not already in the maze
+        # this breaks the internal consistency of the maze
+        # (and raises ValueError when trying to set currentCellNum)
+        self.currentCell = cell
+        self.currentCellNum = self.contents.index(cell)
+    
+    def setCurrentCellNum(self, cellNum):
+        # set the current cell by number
+        # todo: handle bad input (for a cellNum not found)
+        self.currentCellNum = cellNum
+        self.currentCell = self.contents[cellNum]
     
 
 class Cell(object):
@@ -70,7 +107,14 @@ class Cell(object):
     
 
 # test samples
+# part 1: cell
 c1 = Cell(0,0)
 c2 = Cell(0,1)
 c2.set_neighbor('n',c1)
 c1.set_neighbor('s',c2)
+
+# part 2: OneRoomMaze
+mazeOneRoom = OneRoomMaze()
+
+# part 3: ListMaze
+mazeFiveRooms = ListMaze(5)
