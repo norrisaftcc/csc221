@@ -31,14 +31,14 @@ class Maze(object):
 class OneRoomMaze(Maze):
     """ a one room maze contains only one cell """
     def __init__(self):
-        self.currentCell = Cell()
+        self.currentCell = Cell(0,0)
         self.contents = self.currentCell
 
     #def getCurrentCell(self):
     #    pass
 
-    def setCurrentCell(self):
-        pass
+    #def setCurrentCell(self):
+    #    pass
     
 class ListMaze(Maze):
     """ a one-dimensional maze using a python list to store cells """
