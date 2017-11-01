@@ -18,11 +18,11 @@ def main():
     measure(alg,problemSize)
     print ('constant complexity')
     alg = constant_alg
-    measure(alg, problemSize ** 2)
+    measure(alg, problemSize) # ** 2)
 
     print ('logarithmic complexity')
     alg = log_alg
-    measure(alg, problemSize ** 2)
+    measure(alg, problemSize) # ** 2)
 
     print ('linear complexity')
     alg = linear_alg
