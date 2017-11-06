@@ -211,8 +211,57 @@ print('Tour finished')
 # You can add additional code cells, or use the included cell below to continue testing.
 # 
 
-# In[20]:
+# In[22]:
 
 
 print(loc)
+
+
+# ### Extras: Tree
+# let's try a tree structure.
+# in CS terms, a tree grows downward -- the root is placed at the top.
+# Example:
+#         A
+#       /   \
+#       B   C
+#     / 
+#     D
+
+# In[31]:
+
+
+class TreeNode(Node):
+    def __init__(self, contents=None, root=None, left=None, right=None):
+        self.contents = contents
+        self.root = root
+        self.left = left
+        self.right = right
+        
+    def __repr__(self):
+        return "Node ("+str(self.contents)+")"
+    
+# sample tree (using named arguments this time)
+a = TreeNode('A')
+b = TreeNode('B', root=a)
+c = TreeNode('C', root=a)
+d = TreeNode('D', root=b)
+
+# set up left and right children
+a.left = b
+a.right = c
+b.left = d
+
+# test
+current = a
+print('start at root', current)
+current = current.left # go to left child (b)
+print('left, at:',current)
+current = current.left # go to left child (d)
+print('left, at:',current)
+current = current.root # back up to b
+print('up, at:',current)
+current = current.root # back up to a
+print('up, at:',current)
+current = current.right # finally to c
+print('right, at:',current)
 
