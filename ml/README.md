@@ -13,3 +13,5 @@ for example
 pip install tensorflow
 pip install keras
 
+-----
+first pass: confirm modules are installed, load mnist data, view samples
