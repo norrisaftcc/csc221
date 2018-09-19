@@ -1,0 +1,30 @@
+
+
+M2LAB - The Flask Framework (due 9/23)
+
+We will be using Flask extensively later on to create Web-based Python applications. 
+
+For now, I'd like you to attempt to install it on your home Python environment and get the "minimal application" running. This will run a "Hello World" program, but as a Web application accessed through your browser.
+
+Instructions
+
+Flask can be found here:
+
+http://flask.pocoo.org/ (opens in new window)
+
+Visit Documentation -> Installation to install the library, then Documentation -> Quickstart to create the minimal application.
+
+If you're using IDLE, then the commands listed (pip install flask) are correct. If you'd rather install Flask into your Anaconda environment, then you would instead open Anaconda prompt and enter conda install flask.
+
+If you're unable to get the minimal application up and running, you should still follow the directions below, and submit what you have.
+
+Submitting the assignment
+
+Take a screenshot of your command line (cmd.exe or Anaconda prompt) where Flask is running, this should look something like
+
+* Running on http://127.0.0.1:5000/
+
+
+Take a second screenshot of your browser, showing the "Hello world" message. 
+
+Submit both screenshots for this assignment. If you're unable to get Flask running, instead submit the screenshot of your error message(s).

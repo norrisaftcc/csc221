@@ -1,0 +1,50 @@
+
+
+M2T1 - String Operations
+
+Due: 9/30
+
+
+Assignment
+
+The general idea here is to expand our toolbox of useful functions. Your main() should provide a menu that allows you to try out the different functions you write. Any actual logic should be within those functions.
+
+Bronze: function has_which_vowels()
+
+The function has_which_vowels() should take a string and return a list, tuple, or set (your choice) of the vowels that were contained in this string.
+
+For our purposes today, the vowels are a, e, i, o, u. 
+
+Your menu option for this function should ask the user for a string, call the function, and then print the results.
+
+Silver: function has_which_letters()
+
+The function has_which_letters() should take two formal parameters -- one is the string to be tested, the second is a list or tuple of letters to test against. 
+
+Your menu option for this function should ask the user for a string to test, and a string of letters. It should convert the second string to a list or tuple, then call the function. Finally, it will print the results.
+
+Gold: Implement unit tests with the pytest module
+
+You'll probably need to do some research for this one. pytest is installed in both the basic IDLE (python 3.5) environment and in the Anaconda virtual environment. At home, you'll need to use pip or conda to install it.
+
+Create separate unit tests for the following:
+
+Test has_which_vowels() against a string containing some vowels
+
+Test has_which_vowels() against a string containing no vowels
+
+Test has_which_vowels() against a string containing all five vowels
+
+Test has_which_vowels() against an empty string 
+
+Test has_which_letters() against a "normal" use case (or several) -- your discretion.
+
+Test has_which_letters() against arguments that mimic the has_which_vowels tests above
+
+Test has_which_letters() against arguments that don't test for any letters at all
+
+Submitting M2T1
+
+For bronze or silver, just the .py file is sufficient.
+
+For gold, you will probably want to zip up the folder containing the program and all unit tests.
