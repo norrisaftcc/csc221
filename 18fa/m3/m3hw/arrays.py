@@ -20,10 +20,16 @@ class Array(object):
         self._items = list()
         for count in range(capacity):
             self._items.append(fillValue)
+        # logical size starts at zero as the array is empty
+        self._logicalsize = 0
 
     def __len__(self):
         """-> The capacity of the array."""
         return len(self._items)
+
+    def size(self):
+        """-> the logical size (amount actually used) of the array"""
+        return self._logicalsize
 
     def __str__(self):
         """-> The string representation of the array."""
@@ -35,8 +41,28 @@ class Array(object):
 
     def __getitem__(self, index):
         """Subscript operator for access at index."""
-        return self._items[index]
+        print("getting value",index)
+        # check for valid index (>=0 and < logicalsize because it's zero indexed)
+        if index < 0:
+            raise Exception("index too low, can't set")
+        elif index >= self.size():
+            raise Exception("index larger than logical size, can't set")
+        else:
+            return self._items[index]
 
     def __setitem__(self, index, newItem):
         """Subscript operator for replacement at index."""
-        self._items[index] = newItem
+        print("setting value",index)
+        # check for valid index (>=0 and < logicalsize because it's zero indexed)
+        if index < 0:
+            raise Exception("index too low, can't set")
+        elif index >= self.size():
+            raise Exception("index larger than logical size, can't set")
+        else:
+            self._items[index] = newItem
+
+
+
+
+
+        
