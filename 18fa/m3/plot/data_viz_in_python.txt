@@ -1,0 +1,22 @@
+data visulization:
+
+intro to lib
+https://matplotlib.org/tutorials/introductory/pyplot.html
+
+
+data: world temp median anomalies
+
+https://datahub.io/core/global-temp
+
+
+
+vizard
+https://www.worldviz.com/vizard
+
+https://docs.worldviz.com/vizard/latest/index.htm
+docs:
+https://docs.worldviz.com/vizard/latest/#Tutorial__Physics.htm%3FTocPath%3DTutorials%20%26%20Examples%7CPhysics%20engine%7C_____1
+
+python vrzero:
+https://github.com/WayneKeenan/python-vrzero
+
