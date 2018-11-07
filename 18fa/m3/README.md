@@ -1,4 +1,6 @@
 # csc221
 module 3 - classes and objects
 
-added change to branch
+combined both changes
+no, really, i did
+
