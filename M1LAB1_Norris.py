@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 """
 CSC 221
 M1LAB1 - Double a Number
