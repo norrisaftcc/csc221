@@ -11,12 +11,6 @@ class Room:
     In future it should also manage objects in rooms, somehow
     """
 
-    def __init__(self):
-        """ Initialize an empty room"""
-        self.name = "Empty Room"
-        self.description = "No description"
-        self.exits = {}
-
         
     def __init__(self, name, description, exits):
         self.name = name
