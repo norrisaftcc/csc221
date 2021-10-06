@@ -4,7 +4,7 @@
 # 10/1/21
 
 from Room import Room
-#import Player
+from Player import Player
 
 
 """
@@ -38,10 +38,12 @@ class Game:
         """ Initialize object (with no rooms) """
         #self.player = player.Player()
         self.rooms = { } # stored in dictionary
-        self.here = None # TODO: move this to Player
+        # Player is currently used to hold current location (loc)
+        self.player = Player() 
+        
         self.isPlaying = True
         self.isVerbose = True # auto-look on move
-     
+        
 
     def __str__(self):
         pass
@@ -75,7 +77,7 @@ class Game:
                     livingRoom.name: livingRoom,
                     bathroom.name: bathroom }
         
-        self.here = bedroom # starting location
+        self.player.loc = bedroom # starting location
 
     def loop(self):
         """ loop(): the main game loop.
@@ -105,7 +107,7 @@ class Game:
             direction = words[1]
             self.commandGo(direction)    
         elif verb == "look":
-            self.here.describe()
+            self.player.loc.describe()
         elif verb == "quit":
             self.isPlaying = False
             print("quitting")
@@ -120,20 +122,21 @@ class Game:
         side effect: player location is updated if possible.
         """
         # Can we go in the chosen direction from here?
-        if self.here.exits.get(direction) == None:
+        if self.player.loc.exits.get(direction) == None:
             print("You can't go that way.")
         else:   
             # this key does exist
-            newRoomName = self.here.exits[direction]
+            newRoomName = self.player.loc.exits[direction]
             newRoom     = self.rooms[newRoomName]
-            self.here   = newRoom
+            self.player.loc   = newRoom
             if self.isVerbose:
-                self.here.describe()
+                self.player.loc.describe()
 
 
 def main():
     game = Game()
     game.setup()
+    print("Starting game -- enter command.")
     game.loop()
     game.end()
 
