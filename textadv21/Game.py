@@ -103,16 +103,7 @@ class Game:
         verb = words[0]
         if verb == "go":
             direction = words[1]
-            # Can we go in the chosen direction from here?
-            if self.here.exits.get(direction) == None:
-                print("You can't go that way.")
-            else:   
-                # this key does exist
-                newRoomName = self.here.exits[direction]
-                newRoom     = self.rooms[newRoomName]
-                self.here   = newRoom
-                if self.isVerbose:
-                    self.here.describe()
+            self.commandGo(direction)    
         elif verb == "look":
             self.here.describe()
         elif verb == "quit":
@@ -121,6 +112,23 @@ class Game:
         
         else: # first word is verb
             print("I don't know how to", words[0])
+
+    def commandGo(self, direction):
+        """ 
+        input: direction to move.
+        output: none
+        side effect: player location is updated if possible.
+        """
+        # Can we go in the chosen direction from here?
+        if self.here.exits.get(direction) == None:
+            print("You can't go that way.")
+        else:   
+            # this key does exist
+            newRoomName = self.here.exits[direction]
+            newRoom     = self.rooms[newRoomName]
+            self.here   = newRoom
+            if self.isVerbose:
+                self.here.describe()
 
 
 def main():
