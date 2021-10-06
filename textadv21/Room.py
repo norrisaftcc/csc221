@@ -3,7 +3,7 @@
 # norrisa
 # 10/1/21
 
-
+from Item import Item
 
 class Room:
     """
@@ -16,6 +16,7 @@ class Room:
         self.name = name
         self.description = description
         self.exits = exits
+        self.contents = [] # First pass at items in rooms
 
     def __str__(self):
         """ contains the name, description, and exits in a human-readable fashion"""
@@ -27,6 +28,10 @@ class Room:
             text += direction                     # North, South, etc. 
             text += ": " + self.exits[direction]  # prints in format "North: Living Room", etc.
             text += "\n"
+        # print items in room, if any
+        text += "In this room you see: \n"
+        for item in self.contents:
+            text += item.name + " : " + item.description
         return text
 
  #   def __repr__(self):  # we're not using this yet
@@ -48,7 +53,16 @@ class Room:
         # I need access to the roomDict for this -- so it should 
         # go in Game, not Room.             
             
-            
+    def addItem(self, item):
+        """ used to add an item into a room. """
+        self.contents.append(item)
+    
+    def removeItem(self, item):
+        """ used to remove items from a room. """
+        if item in self.contents:
+            self.contents.remove(item)
+        
+    
 
 
 
@@ -72,12 +86,18 @@ def main():
     # (Game will handle this in the full version)
     roomDict = { bedroom.name: bedroom, 
                 livingRoom.name: livingRoom}
+    # Test out items
+    key = Item("key", "It's a bit rusty.")
+    sword = Item("sword", "It's very shiny.")
+    bedroom.addItem(key)
+    livingRoom.addItem(sword)
+    #print(loc.contents) # just dump the list
     
     # Test out movement
     loc = bedroom
     print("Starting room:")
     loc.describe()
-    
+
     print ("Heading South...")
     loc = roomDict[loc.exits["South"]] # find room to South, go there
     loc.describe()
@@ -85,6 +105,10 @@ def main():
     print ("Heading North...")
     loc = roomDict[loc.exits["North"]] # find room to North, go there
     loc.describe()
+    
+
+    
+    
 
 if __name__ == "__main__":
     main()
