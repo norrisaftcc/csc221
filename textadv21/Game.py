@@ -78,6 +78,8 @@ class Game:
                     bathroom.name: bathroom }
         
         self.here = bedroom # starting location
+        # Let's do a turn 1 look , to orient the player
+        self.here.describe()
 
     def loop(self):
         """ loop(): the main game loop.
