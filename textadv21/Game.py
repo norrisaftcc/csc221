@@ -77,7 +77,7 @@ class Game:
                     livingRoom.name: livingRoom,
                     bathroom.name: bathroom }
         
-        self.player.loc = bedroom # starting location
+        self.here = bedroom # starting location
 
     def loop(self):
         """ loop(): the main game loop.
@@ -107,7 +107,7 @@ class Game:
             direction = words[1]
             self.commandGo(direction)    
         elif verb == "look":
-            self.player.loc.describe()
+            self.here.describe()
         elif verb == "quit":
             self.isPlaying = False
             print("quitting")
@@ -122,16 +122,25 @@ class Game:
         side effect: player location is updated if possible.
         """
         # Can we go in the chosen direction from here?
-        if self.player.loc.exits.get(direction) == None:
+        if self.here.exits.get(direction) == None:
             print("You can't go that way.")
         else:   
             # this key does exist
-            newRoomName = self.player.loc.exits[direction]
+            newRoomName = self.here.exits[direction]
             newRoom     = self.rooms[newRoomName]
-            self.player.loc   = newRoom
+            self.here   = newRoom
             if self.isVerbose:
-                self.player.loc.describe()
+                self.here.describe()
 
+
+    # Helper functions -- not necessary, but useful
+    @property
+    def here(self):
+        return self.player.loc
+    
+    @here.setter
+    def here(self, room):
+        self.player.loc = room
 
 def main():
     game = Game()
