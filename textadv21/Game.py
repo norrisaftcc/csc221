@@ -111,6 +111,9 @@ class Game:
         elif verb == "quit":
             self.isPlaying = False
             print("quitting")
+        elif verb == "get":
+            item = words[1]
+            self.commandGet(item)
         
         else: # first word is verb
             print("I don't know how to", words[0])
@@ -131,7 +134,16 @@ class Game:
             self.here   = newRoom
             if self.isVerbose:
                 self.here.describe()
-
+    
+    def commandGet(self, item):
+        """ remove the item from the room (if it's there)
+        and place it in player inventory.
+        """
+        # TODO: actually do this
+        # We'll need to remove the item from the current
+        # room, and then add it to the player inventory
+        # (which means we need a player inventory)
+        print("You try to get the", item)
 
     # Helper functions -- not necessary, but useful
     @property
