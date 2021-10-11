@@ -1,6 +1,7 @@
 # Player class
+from Container import Container
 
-class Player:
+class Player(Container):
     """
     Any data relating to the player himself should go in the 
     Player class.

@@ -2,6 +2,8 @@
 from Game import Game
 from Room import Room
 from Player import Player
+from Item import Item
+
 
 
 class MyGame(Game):
@@ -62,6 +64,10 @@ class MyGameLoader:
                     livingRoom.name: livingRoom,
                     bathroom.name: bathroom,
                     kitchen.name: kitchen }
+        
+        # Add some items to the rooms
+        phone = Item("phone","it's yours.")
+        bedroom.addItem(phone)
                 
         return rooms 
         

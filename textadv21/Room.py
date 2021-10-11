@@ -4,8 +4,9 @@
 # 10/1/21
 
 from Item import Item
+from Container import Container
 
-class Room:
+class Room(Container):
     """
     The Room class holds names, descriptions, and exits.
     In future it should also manage objects in rooms, somehow
@@ -31,6 +32,7 @@ class Room:
         # print items in room, if any
         text += "In this room you see: \n"
         for item in self.contents:
+            #text += self.listContents()
             text += item.name + " : " + item.description
         return text
 
@@ -61,7 +63,6 @@ class Room:
         """ used to remove items from a room. """
         if item in self.contents:
             self.contents.remove(item)
-        
     
 
 
