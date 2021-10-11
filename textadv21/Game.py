@@ -36,7 +36,6 @@ class Game:
 
     def __init__(self):
         """ Initialize object (with no rooms) """
-        #self.player = player.Player()
         self.rooms = { } # stored in dictionary
         # Player is currently used to hold current location (loc)
         self.player = Player() 
@@ -51,35 +50,17 @@ class Game:
     def __repr__(self):
         pass
 
+    def output(self, message):
+        """ output the message. Just uses print() in base class.
+        You might for example subclass to use Flask, etc. """
+        print(message)
 
     def setup(self):
         """ setup(): create a graph of rooms for play. """
-        # just a test -- needs work
-        bedroom = Room( "Bedroom", 
-                   "This is an average bedroom.",
-                   { "north": "Bathroom",
-                     "south": "Living Room"} )
-    
-        #print(bedroom)
+        # you MUST subclass Game and write your own setup()
+        # see MyGame for an example.
         
-        livingRoom = Room ( "Living Room",
-                           "A TV, sofa, and game console are here.",
-                           { "north" : "Bedroom" } )
-        #print(livingRoom)
         
-        bathroom = Room ( "Bathroom", 
-                         "Somebody left the toothpaste uncapped again.",
-                         { "south" : "Bedroom" } )
-        
-        # Place rooms in a dictionary.
-        # (Game will handle this in the full version)
-        self.rooms = { bedroom.name: bedroom, 
-                    livingRoom.name: livingRoom,
-                    bathroom.name: bathroom }
-        
-        self.here = bedroom # starting location
-        # Let's do a turn 1 look , to orient the player
-        self.here.describe()
 
     def loop(self):
         """ loop(): the main game loop.
