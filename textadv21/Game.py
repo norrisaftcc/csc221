@@ -97,6 +97,9 @@ class Game:
         elif verb == "get":
             item = words[1]
             self.commandGet(item)
+        elif verb == "drop":
+            item = words[1]
+            self.commandDrop(item)
         
         else: # first word is verb
             print("I don't know how to", words[0])
@@ -118,7 +121,7 @@ class Game:
             if self.isVerbose:
                 self.here.describe()
     
-    def commandGet(self, item):
+    def commandGet(self, itemName):
         """ remove the item from the room (if it's there)
         and place it in player inventory.
         """
@@ -126,7 +129,27 @@ class Game:
         # We'll need to remove the item from the current
         # room, and then add it to the player inventory
         # (which means we need a player inventory)
-        print("You try to get the", item)
+        print("You try to get the", itemName)
+        # THIS IS BROKEN
+        # until Container is fixed. (SEE CONTAINER.PY)
+        """
+        if self.here.contains(itemName):
+            item = self.here.contents[itemName]
+            self.here.moveItemTo(item, self.player)
+            print("You pick up the ",itemName,".")
+        else:
+            print("You can't see any", itemName, "here.")
+        """
+            
+            
+
+        
+        
+    def commandDrop(self, itemName):
+        """ remove the item from player inventory
+        (if it's there) and add it to the room. 
+        """
+        print("You try to drop the", itemName)
 
     # Helper functions -- not necessary, but useful
     @property

@@ -16,7 +16,7 @@ class Container:
         self.contents[item.name] = item
         
     def remove(self, item):
-        if item in self.contents:
+        if self.contains(item.name):
             self.contents.remove(item)
 
     def moveItemTo(self, item, destination):
@@ -27,6 +27,18 @@ class Container:
     def listContents(self):
         for key in self.contents:
             print(key)
+    """
+    This function is busted. I have an unholy mix
+    of item name and the item itself, and it's broken
+    """       
+    def contains(self, itemName):
+        """ quick way to check if item is present. """
+        # keys() gives us a list of names of items present
+        itemNameList = list(self.contents.keys())
+        if itemName in itemNameList:
+            return True
+        return False
+
  
         
 def main():
