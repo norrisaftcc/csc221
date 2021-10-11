@@ -23,7 +23,13 @@ class MyGame(Game):
         self.here.describe()
         
         
+    
         
+    
+    
+    
+    
+    
 class MyGameLoader:
     """ just used to put all the room setup in a separate class,
     and if needed, a separate file.
@@ -38,18 +44,24 @@ class MyGameLoader:
         
         livingRoom = Room ( "Living Room",
                            "A TV, sofa, and game console are here.",
-                           { "north" : "Bedroom" } )
+                           { "north" : "Bedroom",
+                            "east" : "Kitchen" } )
         #print(livingRoom)
         
         bathroom = Room ( "Bathroom", 
                          "Somebody left the toothpaste uncapped again.",
                          { "south" : "Bedroom" } )
         
+        kitchen = Room ("Kitchen",
+                        "There are the usual appliances, but no food.",
+                        {"west" : "Living Room"} ) 
+        
         # Place rooms in a dictionary.
         # (Game will handle this in the full version)
         rooms = { bedroom.name: bedroom, 
                     livingRoom.name: livingRoom,
-                    bathroom.name: bathroom }
+                    bathroom.name: bathroom,
+                    kitchen.name: kitchen }
                 
         return rooms 
         
