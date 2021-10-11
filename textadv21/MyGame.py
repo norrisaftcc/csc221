@@ -14,11 +14,25 @@ class MyGame(Game):
         Consider a GameLoader class that might read these
         from a file...
         """
+        loader = MyGameLoader()
+        self.rooms = loader.setup()
         
+        # starting location
+        self.here = self.rooms["Bedroom"]
+        # Let's do a turn 1 look , to orient the player
+        self.here.describe()
+        
+        
+        
+class MyGameLoader:
+    """ just used to put all the room setup in a separate class,
+    and if needed, a separate file.
+    """
+    def setup(self):
         bedroom = Room( "Bedroom", 
-                   "This is an average bedroom.",
-                   { "north": "Bathroom",
-                     "south": "Living Room"} )
+           "This is an average bedroom.",
+           { "north": "Bathroom",
+             "south": "Living Room"} )
     
         #print(bedroom)
         
@@ -33,15 +47,11 @@ class MyGame(Game):
         
         # Place rooms in a dictionary.
         # (Game will handle this in the full version)
-        self.rooms = { bedroom.name: bedroom, 
+        rooms = { bedroom.name: bedroom, 
                     livingRoom.name: livingRoom,
                     bathroom.name: bathroom }
-        
-        self.here = bedroom # starting location
-        # Let's do a turn 1 look , to orient the player
-        self.here.describe()
-        
-        
+                
+        return rooms 
         
         
 # Startup
