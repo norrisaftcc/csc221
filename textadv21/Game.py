@@ -132,14 +132,14 @@ class Game:
         print("You try to get the", itemName)
         # THIS IS BROKEN
         # until Container is fixed. (SEE CONTAINER.PY)
-        """
+        
         if self.here.contains(itemName):
             item = self.here.contents[itemName]
             self.here.moveItemTo(item, self.player)
             print("You pick up the ",itemName,".")
         else:
             print("You can't see any", itemName, "here.")
-        """
+        
             
             
 

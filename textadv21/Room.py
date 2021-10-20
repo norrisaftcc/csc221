@@ -17,7 +17,7 @@ class Room(Container):
         self.name = name
         self.description = description
         self.exits = exits
-        self.contents = [] # First pass at items in rooms
+        self.contents = {} # used by container
 
     def __str__(self):
         """ contains the name, description, and exits in a human-readable fashion"""
@@ -31,9 +31,7 @@ class Room(Container):
             text += "\n"
         # print items in room, if any
         text += "In this room you see: \n"
-        for item in self.contents:
-            #text += self.listContents()
-            text += item.name + " : " + item.description
+        text += self.listContents()
         return text
 
  #   def __repr__(self):  # we're not using this yet
@@ -57,12 +55,11 @@ class Room(Container):
             
     def addItem(self, item):
         """ used to add an item into a room. """
-        self.contents.append(item)
+        self.add(item)
     
     def removeItem(self, item):
         """ used to remove items from a room. """
-        if item in self.contents:
-            self.contents.remove(item)
+        self.remove(item)
     
 
 
