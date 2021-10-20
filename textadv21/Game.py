@@ -130,8 +130,7 @@ class Game:
         # room, and then add it to the player inventory
         # (which means we need a player inventory)
         print("You try to get the", itemName)
-        # THIS IS BROKEN
-        # until Container is fixed. (SEE CONTAINER.PY)
+
         
         if self.here.contains(itemName):
             item = self.here.contents[itemName]
@@ -150,6 +149,13 @@ class Game:
         (if it's there) and add it to the room. 
         """
         print("You try to drop the", itemName)
+        
+        if self.player.contains(itemName):
+            item = self.player.contents[itemName]
+            self.player.moveItemTo(item, self.here)
+            print("You drop the", itemName,".")
+        else:
+            print("You don't have a", itemName, "to drop!")
 
     # Helper functions -- not necessary, but useful
     @property

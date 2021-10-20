@@ -68,6 +68,12 @@ class MyGameLoader:
         # Add some items to the rooms
         phone = Item("phone","it's yours.")
         bedroom.addItem(phone)
+        
+        key = Item("key", "for the front door.")
+        kitchen.addItem(key)
+        
+        sword = Item("sword","best $20 you spent at the flea market.")
+        livingRoom.addItem(sword)
                 
         return rooms 
         
