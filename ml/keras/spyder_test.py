@@ -51,8 +51,8 @@ from keras.datasets import mnist
 # %matplotlib inline
 import matplotlib.pyplot as plt
 # choose a style if desired)
-#plt.style.use('classic')
-plt.style.use('grayscale')
+plt.style.use('classic')
+#plt.style.use('grayscale')
 
 import numpy as np
 selection = np.random.randint(len(train_images))
