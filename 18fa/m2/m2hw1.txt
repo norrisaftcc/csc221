@@ -1,0 +1,65 @@
+
+
+M2HW - due 9/30
+
+Bronze - posted
+
+Silver, Gold - TBA
+
+See attached text file.
+
+The URL for the CSV referenced is
+
+https://github.com/veekun/pokedex/blob/master/pokedex/data/csv/pokemon.csv
+
+Additional details will be given in class. For now, at least make sure you are able to parse the first 151 entries and put them in a list (or a list of lists).
+
+----
+csc 221
+M2HW
+
+Assignment M2HW: Lists and Files
+See the Pokedex file referenced in this assignment.
+
+We only care about the first 151 pokemon in the list. 
+Of the fields in the CSV, we care about:
+id, identifier, height, weight
+identifier is a string, the rest are integers.
+
+Tier list: 
+Bronze - Questions 1 and 2
+Silver - [To be posted]
+Gold   - [To be posted]
+
+Question 1
+Your program should provide a menu with a number option
+for each question answered. 
+Menu option 1 is "List all Pokemon".
+Read each pokemon from the file and create a list which
+contains all the names (just the names for this question)
+Then iterate through the list, printing each name. Rather
+than print them one one line each, print the names with 
+commas between them.
+
+Here's an example run:
+1 - List All Pokemon
+The Pokemon are: bulbasar, ivysaur, venusaur, 
+[... lots of lines removed]
+,dragonite, mewto, mew.
+
+Question 2
+Menu option 2 is "Search for a Pokemon"
+Ask the user for a Pokemon name. 
+For each name in the list of Pokemon that matches,
+print id, identifier, height, and weight.
+I recommond you create a list of lists (that is, each
+pokemon is an individual list, and the master list has
+all 151), but there are other ways you could structure
+this data.
+
+Here's an example run:
+2 - Pokemon Search
+Enter a name: saur
+1 	bulbasaur 	Height: 7 	Weight: 69
+2 	ivysaur 	Height: 10 	Weight: 130
+3 	venusaur 	Height: 20 	Weight: 1000
